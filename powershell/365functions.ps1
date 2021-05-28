@@ -1,4 +1,18 @@
 #====================================================================================================================
+# To set global impersonation
+#====================================================================================================================
+
+Function Global-Impersonation {
+    try{Enable-OrganizationCustomization}
+    catch{ echo "$Error"}
+    Finally{
+        echo "An error occured or org customization is already enabled, read the above error to be sure."
+    }
+$user= read-host -prompt 'Input impersonation user'
+New-ManagementRoleAssignment -Role ApplicationImpersonation -User $user
+}
+
+#====================================================================================================================
 # Exchange File Filter
 #====================================================================================================================
 Function filter-Filetype{
