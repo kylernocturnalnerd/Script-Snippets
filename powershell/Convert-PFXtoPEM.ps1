@@ -8,7 +8,7 @@ Function Get-FileName($initialDirectory)
     $OpenFileDialog.ShowDialog() | Out-Null
     $OpenFileDialog.filename
 }
-$PFX = Get-FileName(%userprofile%)
+$PFX = Get-FileName($PWD)
 
 # extract PEM encrypted
 openssl pkcs12 -in $PFX -nocerts -out 'C:\inetpub\cert\PEMenc.key'
