@@ -31,6 +31,8 @@ $version=(Get-WmiObject Win32_OperatingSystem).Caption
 
 switch ( $version )
 { 
+    "Microsoft Windows Server 2022 Standard"                         { $prodkey = "VDYBN-27WPP-V4HQT-9VMD4-VMK7H" }
+    "Microsoft Windows Server 2022 Datacenter"                       { $prodkey = "WX4NM-KYWYW-QJJR4-XV3QB-6VM33" }
     "Microsoft Windows Server 2019 Standard"                         { $prodkey = "N69G4-B89J2-4G8F4-WWYCC-J464C" }
     "Microsoft Windows Server 2019 Datacenter"                       { $prodkey = "WMDGN-G9PQG-XVVXX-R3X43-63DFG" }
     "Microsoft Windows Server 2019 Essentials"                       { $prodkey = "WVDHN-86M7X-466P6-VHXV7-YY726" }
